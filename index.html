@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Krishna Associates — Your Trust, Our Commitment</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Outfit:wght@100;200;300;400&display=swap"
+      rel="stylesheet"
+    />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div id="cursor"></div>
+    <div id="grain"></div>
+    <div id="vignette"></div>
+    <div id="entry-overlay"></div>
+    <div class="cinema-bar" id="bar-top"></div>
+    <div class="cinema-bar" id="bar-bottom"></div>
+    <div id="progress-bar"></div>
+
+    <!-- NAV -->
+    <nav id="main-nav">
+      <div class="nav-logo">
+        <img src="logo.png" alt="Krishna Associates" style="height: 40px" />
+      </div>
+
+      <div class="menu-toggle" id="menu-toggle">
+        <span></span>
+        <span></span>
+      </div>
+
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#s1">Home</a></li>
+        <li><a href="#s2">About</a></li>
+        <li><a href="#s3">Projects</a></li>
+        <li><a href="#s4">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="corner" id="c-tl"></div>
+    <div class="corner" id="c-tr"></div>
+    <div class="corner" id="c-bl"></div>
+    <div class="corner" id="c-br"></div>
+
+    <canvas id="three-canvas"></canvas>
+
+    <div id="scroll-container">
+      <!-- 🔥 HERO (UPDATED CINEMATIC) -->
+      <div class="ui-section" id="s1">
+        <div class="hero-content">
+          <img
+            src="logo.png"
+            style="width: 50%; margin-top: 25%; margin-left: 22%"
+            alt="Krishna Associates"
+            class="hero-logo"
+          />
+
+          <p class="hero-eyebrow">Krishna Associates · Real Estate Experts</p>
+
+          <h1 class="hero-title">
+            Your Trust...<br />
+            <em>Our Commitment</em>
+          </h1>
+
+          <p class="hero-subtitle">
+            Premium property solutions with transparency, trust & experience.
+          </p>
+
+          <div class="hero-cta">
+            <button class="btn-primary">Explore Properties</button>
+            <button class="btn-secondary">Get Consultation</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- SCROLL -->
+      <div class="scroll-hint">
+        <div class="scroll-line"></div>
+        <span>Scroll</span>
+      </div>
+
+      <!-- ABOUT -->
+      <div class="ui-section" id="s2">
+        <p class="section-label">About Us</p>
+
+        <h2 class="section-title">
+          Building Relationships<br />
+          <em>Through Trust</em>
+        </h2>
+
+        <p class="section-body">
+          At Krishna Associates, we specialize in connecting clients with the
+          right properties while ensuring complete transparency and long-term
+          value.
+        </p>
+      </div>
+
+      <!-- STATS -->
+      <div class="ui-section" id="s3">
+        <p class="section-label">Our Work</p>
+
+        <h2 class="section-title">
+          Delivering Results<br />
+          <em>That Matter</em>
+        </h2>
+
+        <div class="stats-row">
+          <div class="stat-item">
+            <div class="stat-num">150+</div>
+            <div class="stat-label">Clients</div>
+          </div>
+
+          <div class="stat-item">
+            <div class="stat-num">80+</div>
+            <div class="stat-label">Properties</div>
+          </div>
+
+          <div class="stat-item">
+            <div class="stat-num">10+</div>
+            <div class="stat-label">Years Experience</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CONTACT -->
+      <div class="ui-section" id="s4">
+        <p class="cta-tag">Inquiry</p>
+
+        <h2 class="cta-title">
+          Let’s Find Your<br />
+          <em>Perfect Property</em>
+        </h2>
+
+        <div class="contact-card">
+          <form class="contact-form">
+            <div class="form-group">
+              <input type="text" id="name" required placeholder=" " />
+              <label>Full Name</label>
+              <span class="line"></span>
+            </div>
+
+            <div class="form-group">
+              <input type="email" id="email" required placeholder=" " />
+              <label>Email Address</label>
+              <span class="line"></span>
+            </div>
+
+            <div class="form-group">
+              <input type="tel" id="phone" required placeholder=" " />
+              <label>Phone Number</label>
+              <span class="line"></span>
+            </div>
+
+            <div class="form-group textarea-group">
+              <textarea id="message" rows="3" placeholder=" "></textarea>
+              <label>Your Message</label>
+              <span class="line"></span>
+            </div>
+
+            <button type="button" class="send-btn" onclick="sendMail()">
+              <span>Request Consultation</span>
+            </button>
+
+            <p id="form-status"></p>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  </body>
+</html>
