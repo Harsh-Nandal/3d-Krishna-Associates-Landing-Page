@@ -12,7 +12,7 @@ const renderer = new THREE.WebGLRenderer({
 });
 renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 renderer.setSize(window.innerWidth, window.innerHeight);
-renderer.shadowMap.enabled = true;
+renderer.shadowMap.enabled = false;
 renderer.shadowMap.type = THREE.PCFSoftShadowMap;
 renderer.toneMapping = THREE.ACESFilmicToneMapping;
 renderer.toneMappingExposure = 0.85;
@@ -345,7 +345,7 @@ cityPositions.forEach(([x, h, z]) => {
 
 // ── STARS / FAR PARTICLES ──
 const starsGeo = new THREE.BufferGeometry();
-const starCount = 1200;
+const starCount = 300;
 const starPos = new Float32Array(starCount * 3);
 for (let i = 0; i < starCount; i++) {
   starPos[i * 3] = (Math.random() - 0.5) * 600;
@@ -617,7 +617,7 @@ window.addEventListener("resize", () => {
   camera.aspect = window.innerWidth / window.innerHeight;
   camera.updateProjectionMatrix();
   renderer.setSize(window.innerWidth, window.innerHeight);
-  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+  renderer.setPixelRatio(1 / 2 * Math.min(window.devicePixelRatio, 2));
 });
 
 // ─────────────────────────────────────────────
